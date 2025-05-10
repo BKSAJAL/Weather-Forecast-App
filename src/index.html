@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/assets/weather.png" type="image/png" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="./input.css" rel="stylesheet" />
+    <title>Weather Forecast App</title>
+  </head>
+  <body class="text-white bg-violet-200">
+    <header class="text-center py-6 bg-violet-700">
+      <h1 class="text-4xl font-bold">Weather Dashboard</h1>
+    </header>
+
+    <div class="main-container">
+      <!-- City Search Section -->
+      <section class="flex flex-col">
+        <form class="flex flex-col gap-4" id="form">
+          <label class="font-bold text-black" for="cityName"
+            >Enter a City Name</label
+          >
+
+          <div class="relative">
+            <input
+              class="bg-white w-full outline-none px-4 py-1 rounded-2xl text-black"
+              type="text"
+              name="cityName"
+              id="cityName"
+              placeholder="E.g. New York, London, Tokyo"
+            />
+            <span
+              id="dropdownIcon"
+              class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer"
+              style="display: none"
+            >
+              ▼
+            </span>
+            <div
+              id="dropdownList"
+              class="absolute w-full bg-white border rounded mt-1 shadow hidden z-10"
+            ></div>
+          </div>
+
+          <button
+            class="bg-violet-700 p-1 rounded-2xl hover:cursor-pointer"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+
+        <!-- divider -->
+        <div class="flex justify-center items-center mt-4 text-black">
+          <span class="w-full border-b"></span>
+          <span class="mx-1">or</span>
+          <span class="w-full border-b"></span>
+        </div>
+
+        <!-- current location button -->
+        <button
+          id="curr-loc"
+          class="bg-gray-500 mt-4 p-1 rounded-2xl hover:cursor-pointer"
+        >
+          Use Current Location
+        </button>
+      </section>
+
+      <!-- Current Weather -->
+      <section>
+        <div
+          class="bg-violet-700 p-6 rounded-2xl flex justify-between items-center"
+        >
+          <div class="flex flex-col gap-3">
+            <p class="text-2xl font-bold" id="city"></p>
+            <p class="text-xs">Temperature: <span id="temperature"></span>°C</p>
+            <p class="text-xs">Wind: <span id="wind"></span> M/S</p>
+            <p class="text-xs">Humidity: <span id="humidity"></span>%</p>
+          </div>
+
+          <div>
+            <img id="weather-icon" class="text-xs" alt="weather-icon" />
+            <p class="text-xs text-center" id="weather"></p>
+          </div>
+        </div>
+
+        <!-- 5 days forecast -->
+        <p class="font-bold my-4 text-xl text-black">5-Day Forecast</p>
+        <div class="flex flex-wrap gap-4 justify-evenly lg:justify-between">
+          <div
+            class="forecast-block flex flex-col items-start gap-3 bg-gray-500 p-4 rounded-2xl w-40"
+          >
+            <p class="text-lg"></p>
+            <img class="text-xs" alt="weather-icon" />
+            <p class="text-xs">Temp: <span></span>°C</p>
+            <p class="text-xs">Wind: <span></span> M/S</p>
+            <p class="text-xs">Humidity: <span></span>%</p>
+          </div>
+
+          <div
+            class="forecast-block flex flex-col items-start gap-3 bg-gray-500 p-4 rounded-2xl w-40"
+          >
+            <p class="text-lg"></p>
+            <img class="text-xs" alt="weather-icon" />
+            <p class="text-xs">Temp: <span></span>°C</p>
+            <p class="text-xs">Wind: <span></span> M/S</p>
+            <p class="text-xs">Humidity: <span></span>%</p>
+          </div>
+
+          <div
+            class="forecast-block flex flex-col items-start gap-3 bg-gray-500 p-4 rounded-2xl w-40"
+          >
+            <p class="text-lg"></p>
+            <img class="text-xs" alt="weather-icon" />
+            <p class="text-xs">Temp: <span></span>°C</p>
+            <p class="text-xs">Wind: <span></span> M/S</p>
+            <p class="text-xs">Humidity: <span></span>%</p>
+          </div>
+
+          <div
+            class="forecast-block flex flex-col items-start gap-3 bg-gray-500 p-4 rounded-2xl w-40"
+          >
+            <p class="text-lg"></p>
+            <img class="text-xs" alt="weather-icon" />
+            <p class="text-xs">Temp: <span></span>°C</p>
+            <p class="text-xs">Wind: <span></span> M/S</p>
+            <p class="text-xs">Humidity: <span></span>%</p>
+          </div>
+
+          <div
+            class="forecast-block flex flex-col items-start gap-3 bg-gray-500 p-4 rounded-2xl w-40"
+          >
+            <p class="text-lg"></p>
+            <img class="text-xs" alt="weather-icon" />
+            <p class="text-xs">Temp: <span></span>°C</p>
+            <p class="text-xs">Wind: <span></span> M/S</p>
+            <p class="text-xs">Humidity: <span></span>%</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
